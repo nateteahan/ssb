@@ -115,7 +115,7 @@ input, textarea, select, button {
 
 .suggestion:hover {
   background-color: #5BDEFF;
-  color: #fff;
+  color: #000;
 }
 
 /* Masonry */

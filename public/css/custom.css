@@ -133,7 +133,7 @@ header .header-content .header-content-inner p {
 }
 
 .promo-item:hover {
-    background-size: 110%; 
+    background-size: 110%;
     border: 10px solid rgba(255,255,255,0.3);
     line-height: 160px;
 }
@@ -144,18 +144,32 @@ header .header-content .header-content-inner p {
     vertical-align: middle;
 }
 
+.image-gallery {
+  column-gap: 1.5em;
+}
+
+.image {
+  margin: 0 0 1.5em;
+  display: inline-block;
+  width: 100%;
+}
+
+.image img {
+  width: 100%;
+}
+
 .item-1 {
 	background: url('../images/writing.jpg');
 	}
-	
+
 .item-2 {
 	background: url('../images/concert.jpg');
 	}
-	
+
 .item-3 {
 	background: url('../images/pencil_sharpener.jpg');
 	}
-		
+
 .item-1,
 .item-2,
 .item-3 {
@@ -177,13 +191,25 @@ header .header-content .header-content-inner p {
 	font-size: 22px;
 	font-weight: 300;
 	}
-	
-.content-3 .glyphicon,	
+
+  /* .content {
+    padding: 20px 100px 0px 100px;
+  } */
+
+  .challengers {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background: #fff;
+    padding: 0px;
+    margin: 0px;
+  }
+
+.content-3 .glyphicon,
 .page-footer .contact .glyphicon {
 	font-size: 32px;
 	font-weight: 700;
 	}
-		
+
 .page-footer .small-print {
 	padding: 50px 0 40px;
 	font-weight: 300;
@@ -337,6 +363,9 @@ fieldset[disabled] .btn-default.active {
     background-color: #222;
 }
 
+.border {
+    border-style: inset;
+}
 .btn-primary {
     border-color: yellowgreen;
     color: #fff;
