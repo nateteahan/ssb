@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Challengers</title>
+</head>
+
+<body>
+  <div id="admin" class="content">
+    <h1>Submit a challenge page</h1>
+    <div class="heading">
+      <div class="circle">1</div>
+      <h2>Add a Challenge</h2>
+    </div>
+    <div class="add">
+      <div class="form">
+        <input v-model="name" placeholder="Challenger(s) Name(s)">
+        <input type="date" min="2019-04-01" max="2022-04-20" v-model="date" placeholder="Date">
+        <!-- <input v-model="skillLevel" placeholder="Skill level"> -->
+        <select v-model="skillLevel">
+          <option disabled value="">Skill Level</option>
+          <option>Noob</option>
+          <option>Ok</option>
+          <option>Good</option>
+        </select>
+        <p></p>
+        <button @click="upload">Submit challenge</button>
+      </div>
+      <div class="upload" v-if="addChallenge">
+        <h2>{{addChallenge.title}}</h2>
+        <!-- <img :src="addItem.path" /> -->
+      </div>
+    </div>
+    <div class="heading">
+      <div class="circle">2</div>
+      <h2>Edit/Delete an challenge</h2>
+    </div>
+    <div class="edit">
+      <div class="form">
+        <input v-model="findName" placeholder="Search">
+        <div class="suggestions" v-if="suggestions.length > 0">
+          <div class="suggestion" v-for="s in suggestions" @click="selectChallenge(s)">{{s.title}}
+          </div>
+        </div>
+        <input type="date" min="2019-04-01" max="2022-04-20" v-model="editDate" placeholder="Date">
+        <select v-model="editSkill">
+          <option disabled value="">Edit Skill Level</option>
+          <option>Noob</option>
+          <option>Ok</option>
+          <option>Good</option>
+        </select>
+      </div>
+      <div class="upload" v-if="findChallenge">
+        <input v-model="findChallenge.name">
+        <p></p>
+        <!-- <img :src="findChallenge.path" /> -->
+      </div>
+      <div class="actions" v-if="findChallenge">
+        <button @click="deleteChallenge(findChallenge)">Delete</button>
+      </div>
+      <div class="actions" v-if="findChallenge">
+        <button @click="editChallenge(findChallenge)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <script src="/admin.js"></script>
+</body>
+
+</html>
