@@ -50,6 +50,14 @@ body {
   font-size: 1em;
 }
 
+.challengers {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  background: #fff;
+  padding: 0px;
+  margin: 0px;
+}
+
 /* Admin */
 .heading {
   display: flex;
